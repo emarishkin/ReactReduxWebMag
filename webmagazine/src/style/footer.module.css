@@ -1,0 +1,197 @@
+/* footer.module.css */
+
+.footer {
+  padding: 20px 0 20px;
+  border-top: 1px solid #333;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 8%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 10%;
+  }
+}
+
+/* Логотип */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.logoContainer:hover {
+  opacity: 0.8;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.logoText {
+  height: 25px;
+  width: auto;
+  filter: brightness(0.8);
+}
+
+/* Права разработчика */
+.rights {
+  text-align: center;
+  order: 3;
+}
+
+@media (min-width: 768px) {
+  .rights {
+    order: 2;
+  }
+}
+
+.developerLink {
+  color: #777;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.developerLink:hover {
+  color: #4dabf7;
+  background: #1e3a8a;
+  border-color: #2563eb;
+}
+
+/* Социальные сети */
+.socials {
+  display: flex;
+  gap: 20px;
+  order: 2;
+}
+
+@media (min-width: 768px) {
+  .socials {
+    order: 3;
+  }
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0.8);
+}
+
+.socialLink:hover .socialIcon {
+  filter: brightness(1);
+}
+
+/* Дополнительная информация (если нужно добавить) */
+.footerInfo {
+  display: none;
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #333;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .footerInfo {
+    display: block;
+  }
+}
+
+.infoText {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 5px 0;
+}
+
+/* Копирайт */
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  color: #555;
+  font-size: 0.85rem;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 767px) {
+  .container {
+    gap: 30px;
+  }
+  
+  .logoContainer {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .logo {
+    height: 35px;
+  }
+  
+  .logoText {
+    height: 20px;
+  }
+  
+  .socialLink {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .socialIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .developerLink {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}

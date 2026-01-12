@@ -1,0 +1,267 @@
+/* header.module.css */
+
+.header {
+  background-color: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #333;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 8%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 10%;
+  }
+}
+
+/* Логотип */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.logoContainer:hover {
+  opacity: 0.8;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.logoText {
+  height: 25px;
+  width: auto;
+}
+
+/* Основная часть хедера */
+.mainSection {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* Пользователь */
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.userSection:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.avatar {
+  height: 24px;
+  width: 24px;
+}
+
+.userName {
+  color: #ccc;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.userSection:hover .userName {
+  color: white;
+}
+
+/* Поиск */
+.searchForm {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 25px;
+  padding: 0 15px;
+  transition: all 0.3s ease;
+}
+
+.searchWrapper:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.searchIcon {
+  margin-top: 9px;
+  height: 18px;
+  width: 18px;
+  opacity: 0.6;
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  padding: 12px 15px;
+  outline: none;
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  color: #777;
+}
+
+.searchResults {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  margin-top: -1px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+/* Аккаунт и корзина */
+.accountSection {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.accountLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.accountLink:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.accountIcon {
+  height: 20px;
+  width: 20px;
+}
+
+/* Корзина с количеством */
+.basketLink {
+  position: relative;
+}
+
+.countBadge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #0f0f0f;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .mainSection {
+    gap: 20px;
+  }
+  
+  .searchForm {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .mainSection {
+    width: 100%;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  .searchForm {
+    max-width: none;
+  }
+  
+  .userName {
+    display: none;
+  }
+  
+  .userSection {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .accountSection {
+    gap: 15px;
+  }
+  
+  .accountLink {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .accountIcon {
+    height: 18px;
+    width: 18px;
+  }
+}
