@@ -1,25 +1,24 @@
 import type { FC } from "react";
 import { NavLink } from "react-router-dom";
-import { ROUTES } from "../utils/routes";
 import styles from '../style/sidebar.module.css'; 
+import { useSelector } from "react-redux";
+import type { RootState } from "../features/store";
 
 export const Sidebar: FC = () => {
+
+     const { list } = useSelector((state: RootState) => state.categories);
+
     return (
         <section className={styles.sidebar}>
             <div className={styles.container}>
                 <div className={styles.title}>Categories</div>
                 <nav className={styles.nav}>
                     <ul className={styles.navList}>
-                        <li className={styles.navItem}>
-                            <NavLink 
-                                to={ROUTES.CATEGORIES} 
-                                className={({ isActive }) => 
-                                    `${styles.navLink} ${isActive ? styles.active : ''}`
-                                }
-                            >
-                                LINK
-                            </NavLink>
-                        </li>
+                        {list.slice(0,5).map(({id,name})=>(
+                            <li key={id}>
+                                <NavLink to={`/categories/${id}`}>{name}</NavLink>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
                 <div className={styles.helpSection}>
