@@ -24,7 +24,7 @@ function App() {
       <div className="app">
         <Header />
         
-        <div className="container">
+        <div style={{display:'flex'}} className="container">
           <Sidebar />
           <AppRoutes />
         </div>

@@ -1,9 +1,11 @@
 import type { FC } from "react";
+import { Poster } from "../components/Poster";
+import styles from '../style/poster.module.css'; 
 
-export const HomePage:FC = () => {
+export const HomePage: FC = () => {
     return (
-        <div>
-            HomePage
+        <div className={styles.homePage}>
+            <Poster />
         </div>
-    )
-}
+    );
+};

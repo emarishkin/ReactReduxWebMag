@@ -1,0 +1,242 @@
+/* poster.module.css */
+
+.poster {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  border-radius: 20px;
+  padding: 60px 5%;
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Бейдж скидки */
+.discountBadge {
+  display: inline-block;
+  background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* Текстовая часть */
+.textContent {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ffffff 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 30px;
+  line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.highlight {
+  color: #60a5fa;
+}
+
+/* Кнопка */
+.shopButton {
+  background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  padding: 18px 45px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shopButton:hover {
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+.shopButton:active {
+  transform: translateY(-1px);
+}
+
+.shopButton::after {
+  content: '→';
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.shopButton:hover::after {
+  transform: translateX(5px);
+}
+
+/* Изображение */
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  border-radius: 15px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Анимация плавания */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Декоративные элементы */
+.glowEffect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.cornerDecorations {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cornerDecorations::before,
+.cornerDecorations::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(37, 99, 235, 0.3);
+}
+
+.cornerDecorations::before {
+  top: 20px;
+  left: 20px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.cornerDecorations::after {
+  bottom: 20px;
+  right: 20px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .poster {
+    padding: 40px 5%;
+  }
+  
+  .image {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .poster {
+    padding: 30px 5%;
+    border-radius: 15px;
+  }
+  
+  .discountBadge {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  
+  .shopButton {
+    padding: 15px 35px;
+    font-size: 1rem;
+  }
+  
+  .image {
+    max-height: 300px;
+  }
+  
+  .cornerDecorations::before,
+  .cornerDecorations::after {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Стили для HomePage */
+.homePage {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
