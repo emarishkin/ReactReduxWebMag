@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { getCategories } from "./features/categories/categoriesSlice"
 import type { addDispatch } from "./features/store"
+import { getProducts } from "./features/products/productsSlice"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
 
   useEffect(()=>{
     dispatch(getCategories())
+    dispatch(getProducts())
   },[dispatch])
 
   return (
